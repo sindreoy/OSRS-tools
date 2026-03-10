@@ -1,0 +1,13 @@
+[project]
+name = "osrs"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "requests",
+    "bs4",
+    "types-requests",
+    "lxml",
+    "black"
+]

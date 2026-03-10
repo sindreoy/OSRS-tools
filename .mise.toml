@@ -1,0 +1,8 @@
+# .mise.toml
+[tools]
+python = "3.14"
+uv = "latest"
+
+[env._.python.venv]
+path = ".venv"
+create = true
