@@ -9,5 +9,21 @@ dependencies = [
     "bs4",
     "types-requests",
     "lxml",
-    "black"
+    "black",
+    "types-beautifulsoup4",
+    "types-requests",
+    "mypy",
 ]
+
+[tool.mypy]
+# Look for modules from root
+mypy_path = "."
+explicit_package_bases = true
+# Make mypy stricter (optional, but recommended for "best practice")
+disallow_untyped_defs = false
+check_untyped_defs = true
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.black]
+line-length = 88

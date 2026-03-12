@@ -8,5 +8,8 @@ wheels/
 
 # Virtual environments
 .venv
+
 .vscode
 .out
+.dmypy.json
+.mypy_cache

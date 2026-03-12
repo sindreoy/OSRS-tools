@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from utils import aggregate_items
+from quest_scraper.utils import aggregate_items
 
 
 def write_output_per_quest(

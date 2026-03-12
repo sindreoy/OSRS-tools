@@ -1,7 +1,8 @@
 import time
 
 from bs4 import BeautifulSoup
-from utils import get_soup, quest_url
+
+from quest_scraper.utils import get_soup, quest_url
 
 REQUEST_DELAY = 0.3  # seconds between requests
 
@@ -114,4 +115,6 @@ def scrape_quest_items(quests: list[str]) -> dict[str, list[tuple[int, str]]]:
         print("\n\nFailed to obtain information for the following quests:")
         for failed in failed_quests:
             print(f"  - {failed}")
+    return results
+    return results
     return results
