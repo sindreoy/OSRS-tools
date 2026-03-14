@@ -1,10 +1,11 @@
 from pathlib import Path
 
+from quest_scraper.custom_types import RequiredItem
 from quest_scraper.utils import aggregate_items
 
 
 def write_output_per_quest(
-    quest_items: dict[str, list[tuple[int, str]]],
+    quest_items: dict[str, list[RequiredItem]],
     file_path: Path = Path(".out/quest_items_per_quest.txt"),
 ):
     file_path.parent.mkdir(parents=True, exist_ok=True)
@@ -21,7 +22,7 @@ def write_output_per_quest(
 
 
 def write_aggregate_output(
-    quest_items: dict[str, list[tuple[int, str]]],
+    quest_items: dict[str, list[RequiredItem]],
     file_path: Path = Path(".out/quest_items_aggregate.txt"),
 ):
     file_path.parent.mkdir(parents=True, exist_ok=True)
