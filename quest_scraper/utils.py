@@ -36,9 +36,9 @@ def aggregate_items(quest_items: dict[str, list[tuple[int, str]]]) -> dict[str, 
         }
     """
 
-    totals = defaultdict(int)
+    totals: dict[str, int] = defaultdict(int)
 
-    for quest, items in quest_items.items():
+    for _, items in quest_items.items():
         for qty, name in items:
             # Normalize item names (wiki titles are already consistent)
             clean_name = name.strip()

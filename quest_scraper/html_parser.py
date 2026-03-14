@@ -1,12 +1,14 @@
 import time
 
 from bs4 import BeautifulSoup
-from utils import get_soup, quest_url
+
+from quest_scraper.custom_types import QuestSection, RequiredItem
+from quest_scraper.utils import get_soup, quest_url
 
 REQUEST_DELAY = 0.3  # seconds between requests
 
 
-def parse_li_item(li) -> tuple[int, str] | None:
+def parse_li_item(li) -> RequiredItem | None:
     """
     Extracts (quantity, item_name) from an <li> element.
     Example:
@@ -34,7 +36,7 @@ def parse_li_item(li) -> tuple[int, str] | None:
     return (quantity, item_name)
 
 
-def extract_required_items(soup: BeautifulSoup) -> list[tuple[int, str]]:
+def extract_required_items(soup: BeautifulSoup) -> list[RequiredItem]:
     """
     Extracts required items as (quantity, item_name) tuples.
     Looks for:
@@ -91,24 +93,27 @@ def extract_required_items(soup: BeautifulSoup) -> list[tuple[int, str]]:
     return []
 
 
-def scrape_quest_items(quests: list[str]) -> dict[str, list[tuple[int, str]]]:
+def scrape_quest_items(
+    quests: list[QuestSection],
+) -> dict[str, list[RequiredItem]]:
     results = {}
     failed_quests = []
 
-    for quest in quests:
-        url = quest_url(quest)
-        print(f"Scraping: {quest} → {url}")
+    for quest_chunk in quests:
+        for quest in quest_chunk["quests"]:
+            url = quest_url(quest)
+            print(f"Scraping: {quest} → {url}")
 
-        try:
-            soup = get_soup(url)
-            items = extract_required_items(soup)
-            results[quest] = items
-        except Exception as e:
-            print(f"Error scraping {quest}: {e}")
-            results[quest] = []
-            failed_quests.append(quest)
+            try:
+                soup = get_soup(url)
+                items = extract_required_items(soup)
+                results[quest] = items
+            except Exception as e:
+                print(f"Error scraping {quest}: {e}")
+                results[quest] = []
+                failed_quests.append(quest)
 
-        time.sleep(REQUEST_DELAY)
+            time.sleep(REQUEST_DELAY)
 
     if failed_quests:
         print("\n\nFailed to obtain information for the following quests:")
