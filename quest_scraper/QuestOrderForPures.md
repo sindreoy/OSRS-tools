@@ -54,14 +54,19 @@
 - Priest in Peril
 - Ghosts Ahoy
 - Making History
+- Alfred Grimhand's Barcrawl
 - Horror from the Deep
 - Elemental Workshop I
 - The golem
 - Elemental Workshop II (optional, start while at Dig Site in The Golem quest)
 - Sleeping Giants (optional)
 - Shades of Mort'ton (optional)
+- Haunted Mine
 - Shadow of the storm
 - Recipe for Disaster/Freeing Evil Dave
+- Twilight's Promise
+- A Porcine of Interest
+- Another Slice of H.A.M (optional)
 
 ## 30 cooking
 - Big Chompy Bird Hunting
@@ -70,26 +75,22 @@
 
 ## 41 cooking
 - Recipe for Disaster/Freeing Skrach Uglogwee
-- Another Slice of H.A.M (optional)
 
 ## 40 mining
 - Watchtower (optional)
 - Icthlarin's Little Helper (optional)
 - Contact! (optional, also hard without prayer)
-- Twilight's Promise
-- A Porcine of Interest
+- Temple of Ikov
+- Troll Stronghold
+- The Forsaken Tower (optional)
 
 ## 35 woodcutting
 - Animal Magnetism
 - Lost City
-- The Forsaken Tower (optional)
-- Troll Stronghold
-- Temple of Ikov
 
 ## 31 herblore
-- Eadgar's Ruse
+- Eadgar's Ruse (start Troll Romance, but finish Eadgar's Ruse before collecting flower)
 - Troll Romance
-- Haunted Mine
 - Underground pass (optional, gives attack xp)
 
 ## 26 construction
